@@ -17,12 +17,12 @@ class Solution {
             $mid = floor(($low + $high) / 2);
             if ($nums[$mid] === $target) {
                 $first = $last = $mid;
-                if ($first -1 >=0) {
+                if ($nums[$first -1] === $target) {
                     while($first > 0 && $nums[$first] === $nums[$first-1]) {
                         $first -= 1;
                     }
                 }
-                if ($last != count($nums) -1) {
+                if ($nums[$first + 1] === $target) {
                     while($last < count($nums) && $nums[$last] === $nums[$last+1]) {
                         $last += 1;
                     }
